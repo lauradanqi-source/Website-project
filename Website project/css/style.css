@@ -1,21 +1,16 @@
-.navbar{
-   display: flex;
-   align-items: center;
-   padding: 20px;
-}
-
 nav{
     flex: 1;
     text-align: right;
 }
-
+/* home, shoppingcart  */
 a{
     text-decoration: none;
     color: black;
 }
-p{
-    color: black;
-}
+
+
+
+/* The displaying of main image and the small Images - homepage */
 
 .main-img{
     display: grid;
@@ -30,4 +25,9 @@ p{
    gap: 10px;
    align-content: start;
 
+}
+/* Footer - homepage */
+footer {
+    margin-top: 3rem;
+    border-top: 2px solid black;
 }
