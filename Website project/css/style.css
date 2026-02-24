@@ -1,33 +1,91 @@
-nav{
-    flex: 1;
-    text-align: right;
+/* nav {
+  flex: 1;
+  text-align: right;
 }
-/* home, shoppingcart  */
-a{
-    text-decoration: none;
-    color: black;
-}
-
-
+/* home, sign in, shoppingcart  */
+/* a {
+  text-decoration: none;
+  color: black;
+} */
 
 /* The displaying of main image and the small Images - homepage */
-
-.main-img{
-    display: grid;
-   grid-template-columns: 2fr 1fr;
-   gap: 20px
+/* 
+.logo-img {
+    width: 22%;
 }
 
-.small-img{
-    display: grid;
-   grid-template-columns: 1fr 1fr;
-   grid-auto-rows: auto;
-   gap: 10px;
-   align-content: start;
+.main-img {
 
+  justify-content: left;
+  width: 40%;
 }
+
+figure {
+  margin: 0%;
+ 
+} */
+/* 
+.small-img {
+  width: 20%; */
+
+/* } */
 /* Footer - homepage */
-footer {
-    margin-top: 3rem;
-    border-top: 2px solid black;
+/* footer {
+  margin-top: 3rem;
+  border-top: 2px solid black;
+} */
+
+
+/* text style */
+* {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+ul{
+    list-style: none;
+    padding-left: 0%;
+    display: flex;
+    flex-grow: 1;
+}
+
+li{
+    margin-left: 3rem;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+
+
+body{
+    margin: 0%;
+}
+/* Header */
+header {
+    background-color: lightpink;
+	display: flex;
+    align-items: center;
+	margin-bottom: 6vh;
+    
+}
+
+/* .site-nav{
+    display: flex;
+    align-items: right;
+} */
+
+.logo{
+    min-width: 30%;
+    max-width: fit-content;
+    margin-left: 3rem;
+    margin-top: 1rem;
+
+}
+.shopping-cart{
+    width: 2rem;
+    margin-left: 100rem;
+    margin-right: 0%;
 }
