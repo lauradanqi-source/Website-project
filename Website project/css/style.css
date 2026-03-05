@@ -65,7 +65,9 @@ width: 100%;
     display: block;
 }
 
-/* MAIN */
+/* main */
+/* MAINPAGE */
+
 .start-page{
   display: grid;
   grid-template-columns: minmax(260px, 40%) 1fr;
@@ -121,8 +123,18 @@ figure{
 .category{
     width: 100%;
 }
-/* footer */
-footer{
-      border-top: 9px black;  
-      margin-top: 3rem;
+
+/* products  */
+
+.perfumes-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    margin-top: 3rem;
+    margin-left: 0rem;
+    margin-bottom: 5rem;
+}
+
+.perfumes{
+    width: 100%;
 }
