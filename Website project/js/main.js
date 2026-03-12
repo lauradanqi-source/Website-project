@@ -41,5 +41,93 @@ function addProductToCart() {
         window.location.href = "cart.html";
     });
   }
+
+  function showCart() {
+    const main = document.querySelector("main");
+    if (!main) return;
+    let cart = getCart();
+    if (cart.length === 0) { `
+        main.innerHTML =
+        <section class="empty-cart">
+            <h1>Your cart is empty</h1> 
+            <a class="continue-shopping" href="products.html">Continue shopping</a>
+        </section>
+`;
+return;
+    }
+
+    let cartHTML = `<section class="cart-container">`
+    cartHTML += `<h1 class="cart-title">Shopping cart</h1>`
+
+    let totalPrice = 0;
+
+    cart.forEach(function (item, index){
+        totalPrice += item.price * item.quantity;
+
+        cartHTML += `
+          <article class="cart-item">
+            <img src="${item.image}" alt="${item.name}"></img>
+            <div class="cart-item-info">
+              <h2>${item.name}</h2>
+              <p>Price: ${item.price} kr</p>
+              <p>Quantity: ${item.quantity}</p>
+              <p>Total: ${item.price * item.quantity} kr</p>
+
+              <div class="cart-controls">
+                <button class="cart-btn minus-btn" data-index="${index}">-</button>
+                <button class="cart-btn plus-btn" data-index="${index}">+</button>
+              </div>
+            </div>
+          </article>
+        `;
+    });
+
+ cartHTML += `
+        <div class="cart-summary">
+          <h2>Total price: ${totalPrice} kr</h2>
+          <a class="continue-shopping" href="products.html">Continue shopping</a>
+        </div>
+      </section>
+    `;
+
+    main.innerHTML = cartHTML;
+
+    const plusButtons = document.querySelectorAll(".plus-btn");
+    const minusButtons = document.querySelectorAll("minus-btn"); 
+
+    plusButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+const index = button.dataset.index;
+let cart = getCart();
+cart[index].quantity += 1;
+saveCart(cart);
+showCart();
+        });
+    });
+
+    minusButtons.forEach(function (button) {
+        button.addEventListener("click", function() {
+            const index = button.dataset.index;
+            let cart = getCart();
+
+            cart[index].quantity -= 1;
+
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+
+            saveCart(cart);
+            showCart();
+        });
+    });
+  }
+
+  if (window.location.pathname.includes("product.html")) {
+
+  }
+
+if (window.location.pathname.includes("cart.html")) {
+
 }
-)
+
+});
